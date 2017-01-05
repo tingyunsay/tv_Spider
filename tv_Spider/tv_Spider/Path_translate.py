@@ -36,25 +36,11 @@ def Relative_to_Absolute(index_url,url_tail,site_name):
 				return [''.join(url_tail)]
 
 def Relative_to_Absolute2(index_url,url_tail,site_name):
-	if site_name == "mangguo_sp":
+	if site_name == "letv_tv":
 		res_urls = []
-		target_url = "http://pcweb.api.mgtv.com/variety/showlist?collection_id={data_id}&month={time_id}"
-		data_id = re.search('(?<=/b/)\d+',index_url).group()
+		target_url = "http://www.le.com/tv/{aid}.html"
 		for i in url_tail:
-				res_urls.append(target_url.format(data_id=data_id,time_id=i))
-		return res_urls
-	elif site_name == "souhu_sp":
-		res_urls = []
-		target_url = "http://tv.sohu.com/item/VideoServlet?source=sohu&id={id}&year=2016&month=0"
-		for i in url_tail:
-				res_urls.append(target_url.format(id=i))
-		return res_urls
-	elif site_name == "letv_sp":
-		res_urls = []
-		target_url = "http://api.le.com/mms/out/albumInfo/getVideoListByIdAndDate?&year=2016&type=1&month={month}&id={data_id}"
-		data_id = re.search('\d+',index_url).group()
-		for i in url_tail:
-				res_urls.append(target_url.format(month=i,data_id=data_id))
+				res_urls.append(target_url.format(aid=i))
 		return res_urls
 	else:
 		return url_tail

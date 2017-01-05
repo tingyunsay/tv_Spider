@@ -39,7 +39,219 @@
 						"screenwriter":["/"],
 						"language":["/"]
 					}
+			}],
+	"mangguo_tv":[{
+				"Is_Json":0,
+				"Index_Url":["http://list.mgtv.com/2/---------2-1-0--.html"],
+				"Max_Page":{
+						"xpath":"//div[@class=\"w-pages w-pages-default \"]/ul/li[last()-1]/a/text()",
+						"re":".+"
+					}
+			},
+			{
+				"All_Detail_Page":{
+						"xpath":["//ul[@class=\"v-list-inner\"]/li/a[1]/@href"]
+					}
+			},
+			{
+				"Signal_Detail_Page":{
+						"xpath":"//div[@class=\"v-panel-route\"]/a[last()]/@href"
+					}		
+			},
+			{
+				"Final_Xpath":{
+						"site_name":["mangguo_tv"],
+						"tv_name":["//div[@class=\"v-info-album-header\"]/h1/span/text()"],
+						"tv_counts":["//p[@class=\"details\"]/span[@class=\"status\"]/b[1]/text()"],
+						"update_counts":["//p[@class=\"details\"]/span[@class=\"status\"]/b[2]/text()"],
+						"publish_time":["/"],
+						"firstplay_time":["/"],
+						"score_level":["/"],
+						"score_counts":["/"],
+						"primary_stars":["//div[@class=\"v-meta v-meta-album\"]/p[@class=\"item long\"][1]/a/text()"],
+						"director":["//div[@class=\"v-meta v-meta-album\"]/p[@class=\"item short\"][1]/a/text()"],
+						"style_classify":["//div[@class=\"v-meta v-meta-album\"]/p[@class=\"item long\"][2]/a/text()"],
+						"area":["//div[@class=\"v-meta v-meta-album\"]/p[@class=\"item short\"][2]/a/text()"],
+						"play_counts":["//p[@class=\"details\"]/span[@class=\"total\"]/em/text()"],
+						"comment_counts":["//div[@class=\"v-info-album-header\"]/p/span[@class=\"comments\"]/a/span[@node-type=\"comments-total-nums\"]/text()"],
+						"fav_counts":["/"],
+						"step_counts":["/"],
+						"introduce":["//div[@class=\"v-meta v-meta-album\"]/p[@class=\"item\"]/span/text()"],
+						"screenwriter":["/"],
+						"language":["/"]
+					}
+			}],
+	"letv_tv":[{
+				"Is_Json":1,
+				"Index_Url":["http://list.le.com/apin/chandata.json?c=2&d=1&md=&o=51&p=1"],
+				"Max_Page":{
+						"index":["data_count"]
+					}
+			},
+			{
+				"All_Detail_Page":{
+						"index":["data_list","aid"]
+					}
+			},
+			{
+				"Signal_Detail_Page":{
+						"xpath":"//div[@class=\"showPic\"]/a/@href"
+					}		
+			},
+			{
+				"Final_Xpath":{
+						"site_name":["mangguo_tv"],
+						"tv_name":["//div[@data-statectn=\"newplay_info\"]/div/h3/text()"],
+						"tv_counts":["//div[@class=\"juji_bar j_jujiBar\"]/text()"],
+						"update_counts":["//div[@class=\"juji_bar j_jujiBar\"]/text()"],
+						"publish_time":["//ul[@class=\"info_list\"]/li[3]/a/text()"],
+						"firstplay_time":["/"],
+						"primary_stars":["//ul[@class=\"info_list\"]/li[5]/em/a/text()"],
+						"director":["//ul[@class=\"info_list\"]/li[4]/em/a/text()"],
+						"style_classify":["//ul[@class=\"info_list\"]/li[6]/em/a/text()"],
+						"area":["//ul[@class=\"info_list\"]/li[7]/em/a/text()"],	
+						"introduce":["//ul[@class=\"info_list\"]/li[8]/em/p/text()"],
+						"screenwriter":["/"],
+						"language":["/"],
+						"fav_counts":["/"],
+						"step_counts":["/"],
+						"json_data":{
+								"score_level":["plist_count"],
+								"score_counts":["plist_score"],
+								"play_counts":["plist_play_count"],
+								"comment_counts":["pcomm_count"]
+						}
+					}
+			}],		
+	"souhu_tv":[{
+				"Is_Json":0,
+				"Index_Url":["http://list.mgtv.com/2/---------2-1-0--.html"],
+				"Max_Page":{
+						"xpath":"//div[@class=\"w-pages w-pages-default \"]/ul/li[last()-1]/a/text()",
+						"re":".+"
+					}
+			},
+			{
+				"All_Detail_Page":{
+						"xpath":["//ul[@class=\"v-list-inner\"]/li/a[1]/@href"]
+					}
+			},
+			{
+				"Signal_Detail_Page":{
+						"xpath":"//div[@class=\"v-panel-route\"]/a[last()]/@href"
+					}		
+			},
+			{
+				"Final_Xpath":{
+						"site_name":["mangguo_tv"],
+						"tv_name":["//div[@class=\"v-info-album-header\"]/h1/span/text()"],
+						"tv_counts":["/"],
+						"update_counts":["/"],
+						"publish_time":[""],
+						"firstplay_time":["/"],
+						"score_level":["//"],
+						"score_counts":["/"],
+						"primary_stars":["/"],
+						"director":["/"],
+						"style_classify":["/"],
+						"area":["/"],
+						"play_counts":["/"],
+						"comment_counts":["/"],
+						"fav_counts":["/"],
+						"step_counts":["/"],
+						"introduce":["/"],
+						"screenwriter":["/"],
+						"language":["/"]
+					}
+			}],
+	"tudou_tv":[{
+				"Is_Json":0,
+				"Index_Url":["http://list.mgtv.com/2/---------2-1-0--.html"],
+				"Max_Page":{
+						"xpath":"//div[@class=\"w-pages w-pages-default \"]/ul/li[last()-1]/a/text()",
+						"re":".+"
+					}
+			},
+			{
+				"All_Detail_Page":{
+						"xpath":["//ul[@class=\"v-list-inner\"]/li/a[1]/@href"]
+					}
+			},
+			{
+				"Signal_Detail_Page":{
+						"xpath":"//div[@class=\"v-panel-route\"]/a[last()]/@href"
+					}		
+			},
+			{
+				"Final_Xpath":{
+						"site_name":["mangguo_tv"],
+						"tv_name":["//div[@class=\"v-info-album-header\"]/h1/span/text()"],
+						"tv_counts":["/"],
+						"update_counts":["/"],
+						"publish_time":[""],
+						"firstplay_time":["/"],
+						"score_level":["//"],
+						"score_counts":["/"],
+						"primary_stars":["/"],
+						"director":["/"],
+						"style_classify":["/"],
+						"area":["/"],
+						"play_counts":["/"],
+						"comment_counts":["/"],
+						"fav_counts":["/"],
+						"step_counts":["/"],
+						"introduce":["/"],
+						"screenwriter":["/"],
+						"language":["/"]
+					}
+			}],
+	"douban_tv":[{
+				"Is_Json":0,
+				"Index_Url":["http://list.mgtv.com/2/---------2-1-0--.html"],
+				"Max_Page":{
+						"xpath":"//div[@class=\"w-pages w-pages-default \"]/ul/li[last()-1]/a/text()",
+						"re":".+"
+					}
+			},
+			{
+				"All_Detail_Page":{
+						"xpath":["//ul[@class=\"v-list-inner\"]/li/a[1]/@href"]
+					}
+			},
+			{
+				"Signal_Detail_Page":{
+						"xpath":"//div[@class=\"v-panel-route\"]/a[last()]/@href"
+					}		
+			},
+			{
+				"Final_Xpath":{
+						"site_name":["mangguo_tv"],
+						"tv_name":["//div[@class=\"v-info-album-header\"]/h1/span/text()"],
+						"tv_counts":["/"],
+						"update_counts":["/"],
+						"publish_time":[""],
+						"firstplay_time":["/"],
+						"score_level":["//"],
+						"score_counts":["/"],
+						"primary_stars":["/"],
+						"director":["/"],
+						"style_classify":["/"],
+						"area":["/"],
+						"play_counts":["/"],
+						"comment_counts":["/"],
+						"fav_counts":["/"],
+						"step_counts":["/"],
+						"introduce":["/"],
+						"screenwriter":["/"],
+						"language":["/"]
+					}
 			}]
+			
+			
+			
+			
+			
+			
 			
 			
 			
