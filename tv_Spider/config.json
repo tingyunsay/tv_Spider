@@ -1,0 +1,47 @@
+{
+	"youku_tv":[{
+				"Is_Json":0,
+				"Index_Url":["http://list.youku.com/category/show/c_97_s_1_d_4_p_1.html"],
+				"Max_Page":{
+						"xpath":"//ul[@class=\"yk-pages\"]/li[last()-1]/a/text()",
+						"re":".+"
+					}
+			},
+			{
+				"All_Detail_Page":{
+						"xpath":["//li[@class=\"yk-col4 mr1\"]/div/div/a/@href"]
+					}
+			},
+			{
+				"Signal_Detail_Page":{
+						"xpath":"//div[@class=\"base_info\"]/a[2]/@href"
+					}		
+			},
+			{
+				"Final_Xpath":{
+						"site_name":["youku_tv"],
+						"tv_name":["//li[@class=\"p-alias\"]/@title"],
+						"tv_counts":["//li[@class=\"p-row p-title\"]/following-sibling::*[1]/text()"],
+						"update_counts":["/"],
+						"publish_time":["//div[@class=\"p-base\"]/ul/li[4]/span/text()"],
+						"firstplay_time":["//div[@class=\"p-base\"]/ul/li[5]/span/text()"],
+						"score_level":["//span[@class=\"star-num\"]/text()"],
+						"score_counts":["/"],
+						"primary_stars":["//li[@class=\"p-performer\"]/a/text()"],
+						"director":["//div[@class=\"p-base\"]/ul/li[8]/a/text()"],
+						"style_classify":["//div[@class=\"p-base\"]/ul/li[10]/a/text()"],
+						"area":["//div[@class=\"p-base\"]/ul/li[9]/a/text()"],
+						"play_counts":["//div[@class=\"p-base\"]/ul/li[11]/text()"],
+						"comment_counts":["//div[@class=\"p-base\"]/ul/li[12]/text()"],
+						"fav_counts":["//div[@class=\"p-base\"]/ul/li[13]/text()"],
+						"step_counts":["/"],
+						"introduce":["//li[@class=\"p-row p-intro\"]/span[@class=\"intro-more hide\"]/text()"],
+						"screenwriter":["/"],
+						"language":["/"]
+					}
+			}]
+			
+			
+			
+			
+}
