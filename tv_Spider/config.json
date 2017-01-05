@@ -125,41 +125,36 @@
 			}],		
 	"souhu_tv":[{
 				"Is_Json":0,
-				"Index_Url":["http://list.mgtv.com/2/---------2-1-0--.html"],
+				"Index_Url":["http://so.tv.sohu.com/list_p1101_p2_p3_p42016_p5_p6_p7_p8_p9_p102_p11_p12_p13.html"],
 				"Max_Page":{
-						"xpath":"//div[@class=\"w-pages w-pages-default \"]/ul/li[last()-1]/a/text()",
+						"xpath":"//div[@class=\"ssPages area\"]/a[last()-1]/text()",
 						"re":".+"
 					}
 			},
 			{
 				"All_Detail_Page":{
-						"xpath":["//ul[@class=\"v-list-inner\"]/li/a[1]/@href"]
+						"xpath":["//ul[@class=\"st-list cfix\"]/li/div[1]/a/@href"]
 					}
-			},
-			{
-				"Signal_Detail_Page":{
-						"xpath":"//div[@class=\"v-panel-route\"]/a[last()]/@href"
-					}		
 			},
 			{
 				"Final_Xpath":{
 						"site_name":["mangguo_tv"],
-						"tv_name":["//div[@class=\"v-info-album-header\"]/h1/span/text()"],
-						"tv_counts":["/"],
-						"update_counts":["/"],
-						"publish_time":[""],
+						"tv_name":["//span[@class=\"vname\"]/text()"],
+						"tv_counts":["//div[@class=\"drama-name area rel cfix \"]/span/text()"],
+						"update_counts":["//div[@class=\"drama-name area rel cfix \"]/span/em/text()"],
+						"publish_time":["//div[@class=\"drama-infoR\"]/ul/li[@class=\"w1\"][last()-3]/text()"],
 						"firstplay_time":["/"],
-						"score_level":["//"],
-						"score_counts":["/"],
-						"primary_stars":["/"],
-						"director":["/"],
-						"style_classify":["/"],
-						"area":["/"],
-						"play_counts":["/"],
-						"comment_counts":["/"],
+						"score_level":["//strong[@class=\"score\"]/text()"],
+						"score_counts":["//em[@class=\"score-sum\"]/text()"],
+						"primary_stars":["//div[@class=\"drama-infoR\"]/ul/li[@class=\"w1\"][last()-2]/a/text()"],
+						"director":["//div[@class=\"drama-infoR\"]/ul/li[not (@*)][3]/a/text()"],
+						"style_classify":["//div[@class=\"drama-infoR\"]/ul/li[not (@*)][2]/a/text()"],
+						"area":["//div[@class=\"drama-infoR\"]/ul/li[not (@*)][1]/a/text()"],
+						"play_counts":["//em[@class=\"total-play\"]/text()"],
+						"comment_counts":["//em[@class=\"comment-num\"]/text()"],
 						"fav_counts":["/"],
 						"step_counts":["/"],
-						"introduce":["/"],
+						"introduce":["//div[@class=\"mod plot\"]/p[@class=\"intro synopsis text\"][1]/span/text()"],
 						"screenwriter":["/"],
 						"language":["/"]
 					}
