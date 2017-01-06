@@ -160,85 +160,78 @@
 					}
 			}],
 	"tudou_tv":[{
-				"Is_Json":0,
-				"Index_Url":["http://list.mgtv.com/2/---------2-1-0--.html"],
+				"Is_Json":1,
+				"Index_Url":["http://www.tudou.com/s3portal/service/pianku/data.action?pageSize=90&app=mainsitepc&deviceType=1&tagType=3&firstTagId=3&areaCode=230100&pageNo=1"],
 				"Max_Page":{
-						"xpath":"//div[@class=\"w-pages w-pages-default \"]/ul/li[last()-1]/a/text()",
-						"re":".+"
+						"index":["total"]
 					}
 			},
 			{
 				"All_Detail_Page":{
-						"xpath":["//ul[@class=\"v-list-inner\"]/li/a[1]/@href"]
+						"index":["items","playUrl"]
 					}
 			},
 			{
 				"Signal_Detail_Page":{
-						"xpath":"//div[@class=\"v-panel-route\"]/a[last()]/@href"
+						"xpath":"//h1[@id=\"videoKw\"]/a/@href"
 					}		
 			},
 			{
 				"Final_Xpath":{
 						"site_name":["mangguo_tv"],
-						"tv_name":["//div[@class=\"v-info-album-header\"]/h1/span/text()"],
+						"tv_name":["//div[@class=\"cover_info\"]/h2/strong[@title]/text()"],
 						"tv_counts":["/"],
 						"update_counts":["/"],
-						"publish_time":[""],
-						"firstplay_time":["/"],
+						"publish_time":["//div[@class=\"cover_keys\"]/div[3]/span[4]/a/text()"],
+						"firstplay_time":["//div[@class=\"cover_keys\"]/div[2]/span[2]/a/text()"],
 						"score_level":["//"],
 						"score_counts":["/"],
-						"primary_stars":["/"],
-						"director":["/"],
-						"style_classify":["/"],
-						"area":["/"],
-						"play_counts":["/"],
-						"comment_counts":["/"],
-						"fav_counts":["/"],
+						"primary_stars":["//div[@class=\"cover_keys\"]/div[2]/span[1]/a/text()"],
+						"director":["//div[@class=\"cover_keys\"]/div[3]/span[1]/a/text()"],
+						"style_classify":["//div[@class=\"cover_keys\"]/div[3]/span[2]/a/text()"],
+						"area":["//div[@class=\"cover_keys\"]/div[3]/span[3]/a/text()"],
+						"play_counts":["//div[@class=\"cover_keys\"]/div[4]/span[1]/text()"],
+						"comment_counts":["//div[@class=\"cover_keys\"]/div[4]/span[2]/text()"],
+						"fav_counts":["//div[@class=\"cover_keys\"]/div[4]/span[3]/text()"],
 						"step_counts":["/"],
-						"introduce":["/"],
+						"introduce":["//div[@class=\"desc\"]/p/text()"],
 						"screenwriter":["/"],
 						"language":["/"]
 					}
 			}],
 	"douban_tv":[{
-				"Is_Json":0,
-				"Index_Url":["http://list.mgtv.com/2/---------2-1-0--.html"],
+				"Is_Json":1,
+				"Index_Url":["https://movie.douban.com/j/search_subjects?type=tv&tag=%E7%83%AD%E9%97%A8&sort=recommend&page_limit=20&page_start=0"],
 				"Max_Page":{
-						"xpath":"//div[@class=\"w-pages w-pages-default \"]/ul/li[last()-1]/a/text()",
-						"re":".+"
+						"index":[25]
 					}
 			},
 			{
 				"All_Detail_Page":{
-						"xpath":["//ul[@class=\"v-list-inner\"]/li/a[1]/@href"]
+						"index":["subjects","url"]
 					}
-			},
-			{
-				"Signal_Detail_Page":{
-						"xpath":"//div[@class=\"v-panel-route\"]/a[last()]/@href"
-					}		
 			},
 			{
 				"Final_Xpath":{
 						"site_name":["mangguo_tv"],
-						"tv_name":["//div[@class=\"v-info-album-header\"]/h1/span/text()"],
-						"tv_counts":["/"],
+						"tv_name":["//span[@property=\"v:itemreviewed\"]/text()"],
+						"tv_counts":["//div[@id=\"info\"]/text()"],
 						"update_counts":["/"],
-						"publish_time":[""],
-						"firstplay_time":["/"],
-						"score_level":["//"],
-						"score_counts":["/"],
-						"primary_stars":["/"],
-						"director":["/"],
-						"style_classify":["/"],
-						"area":["/"],
+						"publish_time":["//span[@class=\"year\"]/text()"],
+						"firstplay_time":["//span[@property=\"v:initialReleaseDate\"]/@content"],
+						"score_level":["//strong[@class=\"ll rating_num\"]/text()"],
+						"score_counts":["//span[@property=\"v:votes\"]/text()"],
+						"primary_stars":["//span[@class=\"actor\"]/span[2]/span/a/text()"],
+						"director":["//div[@id=\"info\"]/span[1]/span[2]/a/text()"],
+						"style_classify":["//span[@property=\"v:genre\"]/text()"],
+						"area":["//span[@property=\"v:initialReleaseDate\"]/@content"],
 						"play_counts":["/"],
 						"comment_counts":["/"],
 						"fav_counts":["/"],
 						"step_counts":["/"],
-						"introduce":["/"],
-						"screenwriter":["/"],
-						"language":["/"]
+						"introduce":["//span[@property=\"v:summary\"]/text()"],
+						"screenwriter":["//div[@id=\"info\"]/span[2]/span[2]/a/text()"],
+						"language":["//div[@id=\"info\"]/text()"]
 					}
 			}]
 			
