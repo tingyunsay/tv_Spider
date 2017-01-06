@@ -100,7 +100,7 @@
 			},
 			{
 				"Final_Xpath":{
-						"site_name":["mangguo_tv"],
+						"site_name":["letv_tv"],
 						"tv_name":["//div[@data-statectn=\"newplay_info\"]/div/h3/text()"],
 						"tv_counts":["//div[@class=\"juji_bar j_jujiBar\"]/text()"],
 						"update_counts":["//div[@class=\"juji_bar j_jujiBar\"]/text()"],
@@ -138,7 +138,7 @@
 			},
 			{
 				"Final_Xpath":{
-						"site_name":["mangguo_tv"],
+						"site_name":["souhu_tv"],
 						"tv_name":["//span[@class=\"vname\"]/text()"],
 						"tv_counts":["//div[@class=\"drama-name area rel cfix \"]/span/text()"],
 						"update_counts":["//div[@class=\"drama-name area rel cfix \"]/span/em/text()"],
@@ -178,7 +178,7 @@
 			},
 			{
 				"Final_Xpath":{
-						"site_name":["mangguo_tv"],
+						"site_name":["tudou_tv"],
 						"tv_name":["//div[@class=\"cover_info\"]/h2/strong[@title]/text()"],
 						"tv_counts":["/"],
 						"update_counts":["/"],
@@ -213,7 +213,7 @@
 			},
 			{
 				"Final_Xpath":{
-						"site_name":["mangguo_tv"],
+						"site_name":["douban_tv"],
 						"tv_name":["//span[@property=\"v:itemreviewed\"]/text()"],
 						"tv_counts":["//div[@id=\"info\"]/text()"],
 						"update_counts":["/"],
