@@ -29,7 +29,7 @@ from tv_Spider.Total_page_circulate import Total_page_circulate,Turn_True_Page
 
 
 class tvSpider(scrapy.Spider):
-	name ='mangguo_tv'
+	name ='douban_tv'
 	allowed_domain = []
 		
 	def __init__(self,*args,**kwargs):
@@ -205,8 +205,7 @@ class tvSpider(scrapy.Spider):
 		
 		print "最大页数是:%d"%max_pages
 		if All_Detail_Page is None:
-				#for i in range(1,max_pages+1):
-				for i in range(1,2):
+				for i in range(1,max_pages+1):
 						i = Turn_True_Page(i,self.name)
 						url = urls.format(page=str(i))
 						request = Request(url,callback = self.parse_final,dont_filter=True,meta={
@@ -222,8 +221,7 @@ class tvSpider(scrapy.Spider):
 						request.meta['Final_Xpath'] = Final_Xpath
 						yield request
 		else:
-				#for i in range(1,int(max_pages)+1):
-				for i in range(1,2):
+				for i in range(1,int(max_pages)+1):
 						try:
 								i = Turn_True_Page(i,self.name)
 								url = urls.format(page=str(i))
@@ -254,7 +252,8 @@ class tvSpider(scrapy.Spider):
 		Target_Detail_Page = response.meta.get('Target_Detail_Page',None)
 		Final_Xpath = response.meta.get('Final_Xpath',None)
 		res_json = json.loads(response.body_as_unicode())
-		
+		douban_json = res_json
+
 		depth = 0
 		try:
 				while depth < len(Max_Page['index']):
@@ -264,12 +263,11 @@ class tvSpider(scrapy.Spider):
 				print Exception,":",e
 		urls = get_HeadUrl(Index_Url,self.name)	
 		
-		print "now the res_json is %s"%res_json
+		res_json = Max_Page['index'][0]
 		max_pages = Total_page_circulate(self.name,int(res_json))
 		print "最大页数是:%d"%max_pages
 		if All_Detail_Page is None:
-				#for i in range(1,max_pages+1):
-				for i in range(1,2):
+				for i in range(1,max_pages+1):
 						i = Turn_True_Page(i,self.name)
 						url = urls.format(page=str(i))
 						request = Request(url,callback = self.parse_final,dont_filter=True,meta={
@@ -285,8 +283,7 @@ class tvSpider(scrapy.Spider):
 						request.meta['Final_Xpath'] = Final_Xpath
 						yield request
 		else:
-				#for i in range(1,int(max_pages)+1):
-				for i in range(1,2):
+				for i in range(1,int(max_pages)+1):
 						try:
 								i = Turn_True_Page(i,self.name)
 								url = urls.format(page=str(i))
@@ -418,7 +415,7 @@ class tvSpider(scrapy.Spider):
 						except Exception,e:
 								print Exception,":",e
 		detail_url = Relative_to_Absolute(Index_Url,response.xpath(Signal_Detail_Page['xpath']).extract(),self.name)
-		print "[ %s ]"%response.xpath(Signal_Detail_Page['xpath']).extract()
+		#print "[ %s ]"%response.xpath(Signal_Detail_Page['xpath']).extract()
 		if Target_Detail_Page is None:
 				for url in detail_url:
 						request = Request(url,callback = self.parse_final,dont_filter=True,meta={
