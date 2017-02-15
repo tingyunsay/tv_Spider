@@ -16,6 +16,7 @@ def kill_pid(pid):
 	
 	#return True if not os.system("kill -9 %s"%pid) else False
 
+#声明一个全局的变量，存放所有可执行的爬虫
 spider_name = []
 
 with open('config.json','r') as f:
@@ -29,10 +30,45 @@ elif sys.argv[1].startswith('--'):
 		option = sys.argv[1][2:]
 		if option == "help":
 				print "输入如下格式:"
+				print "\t\t--show\t\t显示当前可运行的spider"
+				print "\t\t--spider +name\t\t运行指定spider"
 				print "\t\t--spider_name\t\tkill指定spider"
 				print "\t\t--version\t\t版本查询"
 				print "\t\t--alive\t\t\t查询所有存活spider"
+				print "\t\t--run_all\t\t运行全部spider"
 				print "\t\t--killall\t\t杀死所有spider"
+		elif option == "run_all":
+				spider_name = spider_name
+				for spider in spider_name:
+						if not re.search('2',spider):
+								#用当天的日期来做日志文件名
+								command = "nohup scrapy crawl %s >> mv_spider.%s.log 2>&1 &"%(spider,(time.strftime("%Y-%m-%d",time.localtime())).replace(' ','-'))
+								os.system(command)
+								print "spider %s is runing ...."%spider if is_runing(spider) else "spider %s start fail ...."%spider
+		elif option == "show":
+				print "config文件中所有的spider有 ，共%s个:\n %s\t\t\t\n"%(len(spider_name),(' , '.join(spider_name)))
+				running = []
+				for spider in spider_name:
+						exists = commands.getoutput("ps -ef|grep %s|grep -v grep"%spider)
+						running.append(spider) if exists else ""
+				print "其中处于running状态的有 ，共%s个:\n %s \t\t\t\n"%(len(running),(' , '.join(running)))
+				stop = list(set(spider_name)^set(running))
+				print "其中处于stop状态的有 ，共%s个:\n %s \t\t\t\n"%(len(stop),(' , '.join(stop)))
+				
+		elif option == "spider":
+				try:
+						spider = sys.argv[2]
+				except Exception,e:
+						print "请不要输入空的spider name , 退出."
+						sys.exit()
+				if spider in spider_name:
+						command = "nohup scrapy crawl %s >> mv_spider.%s.log 2>&1 &"%(spider,(time.strftime("%Y-%m-%d",time.localtime())).replace(' ','-'))
+						os.system(command)
+						print "正在寻找spider %s 是否启动，稍等......"%spider
+						time.sleep(1)
+						print "spider %s is runing ...."%spider if is_runing(spider) else "spider %s start fail ...."%spider
+				else:
+						print "请输入正确的spider name."		
 		elif option == "version":
 				print "version 1.0 tingyun"
 		elif option == "alive":
